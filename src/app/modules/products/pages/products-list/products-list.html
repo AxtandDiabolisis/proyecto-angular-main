@@ -1,0 +1,21 @@
+<h2>Productos</h2>
+
+<table class="products-table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (p of products | async; track p.id) {
+    <tr>
+        <td>{{ p.name }}</td>
+        <td>{{ p.price }}</td>
+        <td>{{ p.stock }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+
