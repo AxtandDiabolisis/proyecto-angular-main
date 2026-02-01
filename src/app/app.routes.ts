@@ -36,6 +36,18 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'products/new',
+        loadComponent: () =>
+          import('./modules/products/pages/product-form/product-form.component')
+            .then(m => m.ProductFormComponent),
+      },
+      {
+        path: 'products/:id/edit',
+        loadComponent: () =>
+          import('./modules/products/pages/product-form/product-form.component')
+            .then(m => m.ProductFormComponent),
+      },
+      {
         path: '',
         redirectTo: 'dashboard',
         pathMatch: 'full',

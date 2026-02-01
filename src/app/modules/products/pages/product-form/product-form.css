@@ -1,0 +1,49 @@
+.product-form-page {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.product-form {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.form-field label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.form-field input,
+.form-field select {
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  border: 1px solid #d1d5db;
+}
+
+.form-field small {
+  color: #dc2626;
+  margin-top: 0.25rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+button.primary {
+  background: var(--primary);
+  color: white;
+}
+
+button.secondary {
+  background: #e5e7eb;
+}

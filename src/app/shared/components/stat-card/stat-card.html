@@ -1,0 +1,13 @@
+<div class="stat-card" [ngClass]="'stat-card-' + color">
+  <div class="stat-icon" [ngClass]="'stat-icon-' + color">
+    <span class="material-symbols-outlined">
+      {{ icon }}
+    </span>
+  </div>
+
+  <div class="stat-content">
+    <h3>{{ title }}</h3>
+    <p class="stat-number">{{ value }}</p>
+    <p class="stat-label">{{ label }}</p>
+  </div>
+</div>

@@ -1,21 +1,55 @@
-<h2>Productos</h2>
+<section class="products-page">
+  <div class="page-header">
+    <h1>Productos</h1>
+    <button class="primary-button" routerLink="/products/new">
+      Nuevo producto
+    </button>
+  </div>
 
-<table class="products-table">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Precio</th>
-      <th>Stock</th>
-    </tr>
-  </thead>
-  <tbody>
-    @for (p of products | async; track p.id) {
-    <tr>
-        <td>{{ p.name }}</td>
-        <td>{{ p.price }}</td>
-        <td>{{ p.stock }}</td>
-    </tr>
-    }
-  </tbody>
-</table>
+  <table class="products-table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Estado</th>
+        <th></th>
+      </tr>
+    </thead>
 
+    <tbody>
+      @for (p of products(); track p.id) {
+        <tr>
+          <td>{{ p.name }}</td>
+          <td>$ {{ p.price }}</td>
+          <td>{{ p.stock }}</td>
+          <td>
+            <span
+              class="status"
+              [class.active]="p.status === 'active'"
+              [class.inactive]="p.status === 'inactive'"
+            >
+              {{ p.status }}
+            </span>
+          </td>
+          <td class="actions">
+            <button [routerLink]="['/products', p.id, 'edit']">
+              Editar
+            </button>
+            <button class="danger" (click)="askDelete(p.id)">
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</section>
+@if (selectedProductId !== null) {
+  <app-confirm-dialog
+    title="Confirmar eliminación"
+    message="¿Estás seguro de que deseas eliminar este producto?"
+    (confirm)="confirmDelete()"
+    (cancel)="cancelDelete()"
+  ></app-confirm-dialog>
+}

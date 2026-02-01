@@ -1,0 +1,25 @@
+<div class="action-card" [ngClass]="variant" tabindex="0">
+  <div class="action-content">
+    <div class="action-header">
+      <h3>
+        <span
+          class="material-symbols-outlined action-icon"
+          [ngClass]="variant"
+        >
+          {{ icon }}
+        </span>
+        {{ title }}
+      </h3>
+    </div>
+
+    <p>{{ description }}</p>
+  </div>
+
+  <a
+    [routerLink]="route"
+    class="action-button"
+    [ngClass]="variant"
+  >
+    Ver {{ title.toLowerCase() }}
+  </a>
+</div>

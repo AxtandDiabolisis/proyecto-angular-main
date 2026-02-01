@@ -1,1 +1,149 @@
 /* You can add global styles to this file, and also import other style files */
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Variables de diseño (MUY PRO) */
+:root {
+  --primary: #1976d2;
+  --primary-dark: #115293;
+  --sidebar-bg: #263238;
+  --background: #f4f6f8;
+  --card-bg: #ffffff;
+  --text-main: #263238;
+  --text-muted: #6b7280;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Tipografía */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--background);
+  color: var(--text-main);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+p {
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+}
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+input, select, textarea {
+  font-family: inherit;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+  padding: 0.5rem;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.3);
+}
+/* Layout general */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.text-center {
+  text-align: center;
+}
+.mt-1 {
+  margin-top: 1rem;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.mb-1 {
+  margin-bottom: 1rem;
+}
+.mb-2 {
+  margin-bottom: 2rem;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+.card-header {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.button-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  transition: background 0.2s;
+}
+.button-primary:hover {
+  background: var(--primary-dark);
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th, .table td {
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+}
+.table th {
+  background: #f9fafb;
+}
+.table tr:nth-child(even) {
+  background: #f9fafb;
+}
+.table tr:hover {
+  background: #f1f5f9;
+}
+/* Media Queries */
+@media (max-width: 768px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem;
+  }
+}
+/* Fin de estilos globales */
+/* Estilos específicos pueden ir en sus respectivos archivos CSS */
+/* Fin de estilos globales */

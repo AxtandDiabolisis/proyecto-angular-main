@@ -1,0 +1,48 @@
+<section class="product-form-page">
+  <div class="page-header">
+    <h1>{{ isEdit ? 'Editar producto' : 'Nuevo producto' }}</h1>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" class="product-form">
+    <div class="form-field">
+      <label>Nombre</label>
+      <input type="text" formControlName="name" />
+      @if (form.controls.name.touched && form.controls.name.invalid) {
+        <small>El nombre es obligatorio (mínimo 3 caracteres)</small>
+      }
+    </div>
+
+    <div class="form-field">
+      <label>Precio</label>
+      <input type="number" formControlName="price" />
+      @if (form.controls.price.touched && form.controls.price.invalid) {
+        <small>Precio inválido</small>
+      }
+    </div>
+
+    <div class="form-field">
+      <label>Stock</label>
+      <input type="number" formControlName="stock" />
+      @if (form.controls.stock.touched && form.controls.stock.invalid) {
+        <small>Stock inválido</small>
+      }
+    </div>
+
+    <div class="form-field">
+      <label>Estado</label>
+      <select formControlName="status">
+        <option value="active">Activo</option>
+        <option value="inactive">Inactivo</option>
+      </select>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="secondary" (click)="cancel()">
+        Cancelar
+      </button>
+      <button type="submit" class="primary">
+        {{ isEdit ? 'Actualizar' : 'Guardar' }}
+      </button>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,15 @@
+<div class="backdrop">
+  <div class="dialog">
+    <h2>{{ title }}</h2>
+    <p>{{ message }}</p>
+
+    <div class="actions">
+      <button class="secondary" (click)="cancel.emit()">
+        Cancelar
+      </button>
+      <button class="danger" (click)="confirm.emit()">
+        Eliminar
+      </button>
+    </div>
+  </div>
+</div>

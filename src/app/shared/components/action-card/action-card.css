@@ -1,0 +1,109 @@
+.action-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    border-left: 4px solid transparent;
+    padding: 1.75rem 2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.action-card.products { border-left-color: #3b82f6; }
+.action-card.clients  { border-left-color: #10b981; }
+.action-card.sales    { border-left-color: #8b5cf6; }
+
+.action-card:hover,
+.action-card:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary);
+  outline: none;
+}
+
+.action-content {
+  max-width: 70%;
+}
+
+.action-header {
+  margin-bottom: 1rem;
+}
+
+.action-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.action-icon {
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+.action-card p {
+  color: var(--text-muted);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.action-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* PRODUCTS */
+.action-card.products { border-left-color: #3b82f6; }
+.action-icon.products { color: #3b82f6; }
+.action-button.products { background: #3b82f6; }
+.action-button.products:hover { background: #2563eb; }
+
+/* CLIENTS */
+.action-card.clients { border-left-color: #10b981; }
+.action-icon.clients { color: #10b981; }
+.action-button.clients { background: #10b981; }
+.action-button.clients:hover { background: #059669; }
+
+/* SALES */
+.action-card.sales { border-left-color: #8b5cf6; }
+.action-icon.sales { color: #8b5cf6; }
+.action-button.sales { background: #8b5cf6; }
+.action-button.sales:hover { background: #7c3aed; }
+
+@media (max-width: 768px) {
+  .action-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .action-content {
+    max-width: 100%;
+  }
+
+  .action-button {
+    align-self: stretch;
+    text-align: center;
+  }
+}
