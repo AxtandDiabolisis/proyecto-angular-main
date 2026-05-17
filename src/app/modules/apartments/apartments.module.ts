@@ -1,2 +1,12 @@
-// apartments.module.ts
-// ...aquí irá la definición del módulo de apartamentos...
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { ApartmentsRoutingModule } from './apartments-routing.module';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    ApartmentsRoutingModule,
+  ],
+})
+export class ApartmentsModule {}

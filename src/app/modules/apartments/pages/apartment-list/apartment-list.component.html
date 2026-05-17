@@ -1,0 +1,11 @@
+<dx-data-grid
+  [dataSource]="apartments"
+  [showBorders]="true"
+>
+  <dxo-search-panel [visible]="true"></dxo-search-panel>
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
+  <dxi-column dataField="tower" caption="Torre"></dxi-column>
+  <dxi-column dataField="apartmentNumber" caption="Apartamento"></dxi-column>
+  <dxi-column dataField="floor" caption="Piso"></dxi-column>
+  <dxi-column dataField="status" caption="Estado"></dxi-column>
+</dx-data-grid>

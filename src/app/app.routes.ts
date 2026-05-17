@@ -1,9 +1,26 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home.component';
 
 export const routes: Routes = [
-	{
-		path: '',
-		component: HomeComponent
-	}
+  {
+    path: 'apartments',
+    loadChildren: () =>
+      import('./modules/apartments/apartments.module')
+        .then(m => m.ApartmentsModule),
+  },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./modules/auth/auth-module')
+        .then(m => m.AuthModule),
+  },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./modules/dashboard/dashboard-module')
+        .then(m => m.DashboardModule),
+  },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
