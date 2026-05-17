@@ -1,0 +1,15 @@
+<div class="login-container">
+  <input
+    type="email"
+    placeholder="Correo"
+    [(ngModel)]="loginData.email"
+  />
+
+  <input
+    type="password"
+    placeholder="Contrasena"
+    [(ngModel)]="loginData.password"
+  />
+
+  <button type="button" (click)="login()">Ingresar</button>
+</div>

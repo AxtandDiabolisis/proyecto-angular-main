@@ -1,0 +1,15 @@
+<div class="sidebar">
+
+	<div
+		class="menu-item"
+		*ngFor="let item of menuItems"
+		[routerLink]="item.route"
+	>
+		<i class="dx-icon dx-icon-{{item.icon}}"></i>
+		<span>
+			{{ item.title }}
+		</span>
+	</div>
+
+</div>
+<p>sidebar works!</p>
